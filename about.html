@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Kougar Solutions</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Add other head elements like fonts or favicon -->
+    
+    <style>
+    body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #bee3f8;
+    transform: translateY(-3px);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+h1, h2 {
+    color: #4c51bf;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+section {
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+.team-member {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dotted #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 10px 0;
+    }
+
+    main {
+        margin: 1rem auto;
+    }
+}
+/* Intro Section Background Gradient Styling */
+#intro {
+    position: relative;
+    text-align: center;
+    color: white;
+    background: linear-gradient(to right, #000046, #1CB5E0); /* Dark blue gradient */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Rest of your styles... */
+
+
+#intro::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(10, 25, 47, 0.6); /* Dark blue overlay */
+    z-index: 1;
+}
+
+/* Ensure the rest of your styles are also included */
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.value-item {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translate3d(0, 50px, 0); }
+    100% { opacity: 1; transform: none; }
+}
+
+.team-member {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0; /* Start invisible */
+}
+.logo {
+    max-width: 200px; /* Maximum width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Center the logo image */
+    margin-left: auto; /* Auto margins for centering */
+    margin-right: auto;
+}
+
+/* Custom Decorative Line Style */
+.vision-mission-line {
+    height: 2px;
+    width: 80px;
+    background: #bee3f8;
+    margin-top: 1rem;
+}
+
+/* Animation for Floating Effect */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Slight delay to create a cascading effect */
+.delay-150 {
+    animation-delay: 0.15s;
+}
+
+/* Additional styles for hover effects */
+.vision-box:hover, .mission-box:hover {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .vision-box, .mission-box {
+        text-align: left;
+        padding: 20px;
+    }
+}
+.global-presence .region-card {
+    padding: 6rem 2rem;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    border-radius: 10px;
+    background: linear-gradient(to top right, #ffffff, #f0f2f5);
+    position: relative;
+    overflow: hidden;
+}
+
+.global-presence .region-card::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+    top: -50%;
+    left: -10%;
+    transform: rotate(25deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.global-presence .region-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.global-presence .region-card:hover::before {
+    transform: rotate(25deg) translateX(25%);
+}
+
+/* Icons and text enhancements for better visibility */
+.global-presence i {
+    transition: color 0.3s ease-in-out;
+}
+
+.global-presence .region-card:hover i {
+    color: #4a90e2; /* Or any color that fits the design */
+}
+
+.global-presence h3, .global-presence p {
+    transition: color 0.3s ease-in-out;
+}
+
+.global-presence .region-card:hover h3, .global-presence .region-card:hover p {
+    color: #333; /* Darker text on hover for contrast */
+}
+#intro .logo {
+    filter: brightness(250%); /* Adjust brightness as needed */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for any changes */
+}
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.whatsapp-float i {
+    margin-top: 16px;
+}
+
+
+
+
+
+
+
+
+
+</style>
+    
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Navigation for larger screens, centralized -->
+            <div class="hidden sm:flex justify-center w-full">
+                <nav class="space-x-4"> 
+                    <a href="home.html" class="hover:text-blue-300">Home</a>
+                    <a href="Contact/get-started.html" class="hover:text-blue-300">Services</a>
+                    <a href="career.php" class="hover:text-blue-300">Career</a>
+                </nav>
+            </div>
+            
+            <!-- Hamburger Menu Button for smaller screens -->
+            <button id="hamburger" class="sm:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    
+        <!-- Mobile Menu, hidden initially -->
+        <div id="mobileMenu" class="hidden">
+            <a href="home.html" class="block hover:text-blue-300 px-4 py-2">Home</a>
+            <a href="Contact/get-started.html" class="block hover:text-blue-300 px-4 py-2">Services</a>
+            <a href="career.php" class="block hover:text-blue-300 px-4 py-2">Career</a>
+        </div>
+    </header>
+    
+    
+
+    <section id="intro" class="flex items-center justify-center min-h-screen">
+        <div class="container mx-auto px-6 py-16 md:py-32 relative z-10">
+            <!-- Inserted logo image -->
+            <img src="Images/kougar Logo.png" alt="Kougar Solutions Logo" class="logo w-48 mx-auto mb-8" />
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">About Kougar Solutions</h1>
+            <p class="text-xl md:text-2xl mb-6">Pioneering Advanced Security and Technology Solutions</p>
+            <a href="#vision-mission" class="bg-transparent text-blue-300 font-semibold py-2 px-4 border border-blue-500 rounded">
+                Learn More
+            </a>
+        </div>
+    </section>
+    
+    
+    
+        <!-- Vision and Mission Section -->
+        <section id="vision-mission" class="py-20 bg-gradient-to-b from-blue-900 to-blue-600 text-white overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl font-bold mb-4 text-white">Our Vision and Mission</h2>
+                    <p class="text-xl">Driving innovation and excellence in security solutions</p>
+                    <div class="vision-mission-line mx-auto mt-6"></div> <!-- Decorative line -->
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="vision-box animate-float">
+                        <h3 class="text-3xl font-semibold mb-4">Vision</h3>
+                        <p>As a dynamic, rapidly growing company, our vision is to become your number one choice in IT and Advanced Security, both locally and globally.</p>
+                    </div>
+                    <div class="mission-box animate-float delay-150">
+                        <h3 class="text-3xl font-semibold mb-4">Mission</h3>
+                        <p>Our mission at Kougar Solutions and Allied Services Ltd is to exceed our customers' expectations by providing the best Security Solution to suit their Security needs, particularly in light of Nigeria's recent security challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+    
+        <!-- Our Values Section -->
+        <section id="our-values" class="py-20 bg-gradient-to-b from-blue-600 to-indigo-900 text-white overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl font-bold mb-4 text-white">Our Core Values</h2>
+                    <p class="text-xl">Foundational principles guiding our innovation and excellence</p>
+                    <div class="values-line mx-auto mt-6"></div> <!-- Decorative line -->
+                </div>
+                <div class="grid md:grid-cols-3 gap-10 items-center">
+                    <div class="value-box animate-float">
+                        <div class="icon mb-4"><i class="fas fa-rocket fa-3x"></i></div>
+                        <h3 class="text-3xl font-semibold mb-4">Innovation</h3>
+                        <p>Embracing new ideas to continuously improve and lead in the security industry.</p>
+                    </div>
+                    <div class="value-box animate-float delay-150">
+                        <div class="icon mb-4"><i class="fas fa-handshake fa-3x"></i></div>
+                        <h3 class="text-3xl font-semibold mb-4">Integrity</h3>
+                        <p>Maintaining the highest ethical standards in all our interactions.</p>
+                    </div>
+                    <div class="value-box animate-float delay-300">
+                        <div class="icon mb-4"><i class="fas fa-users fa-3x"></i></div>
+                        <h3 class="text-3xl font-semibold mb-4">Collaboration</h3>
+                        <p>Working together with clients and communities to achieve shared goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        
+        
+        
+    
+        <!-- Management Team Section -->
+        <section class="py-16 bg-gray-50" id="management-team">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Our Management Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Mr. Rony Melhem -->
+            <!-- Example Team Member with Image -->
+            <div class="team-member transform transition duration-500 hover:scale-105">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="Images/Directors/rony.png" alt="Profile Picture" class="w-full object-cover" style="height: 250px;">
+                    <div class="p-6">
+                    <h3 class="font-bold text-lg text-blue-700 mb-1">>Mr. Rony Melhem - Group Managing Director</h3>
+                    <p class="text-gray-700 mt-2">With a quarter-century in the security solutions industry, Mr. Melhem's expertise in strategic planning, marketing, and security technology is unparalleled.</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="team-member transform transition duration-500 hover:scale-105">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="Images/Directors/sammer.png" alt="Profile Picture" class="w-full object-cover" style="height: 250px;">
+                    <div class="p-6">
+                    <h3 class="font-bold text-lg text-blue-700 mb-1">>Mr. Samer Haddad - Managing Director/Partner (Monrovia & Lagos)</h3>
+                    <p class="text-gray-700 mt-2">Specializes in strategic business development and operational management, ensuring excellence across services.</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="team-member transform transition duration-500 hover:scale-105">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="Images/Directors/admiral.png" alt="Profile Picture" class="w-full object-cover" style="height: 250px;">
+                    <div class="p-6">
+                    <h3 class="font-bold text-lg text-blue-700 mb-1">>Admiral Joseph El Ghorayeb - Managing Director (Abuja)</h3>
+                    <p class="text-gray-700 mt-2">Brings extensive experience from military operations to security management, focusing on strategic planning and crisis management.</p>
+                </div>
+            </div>
+            </div>
+            
+            <!-- Add more team members in the same pattern -->
+                </div>
+            </div>
+        </section>
+
+                <!-- Projects & CSR Section -->
+                <section class="mb-12 bg-white py-8 px-4 shadow-lg rounded-lg transform transition duration-500 hover:scale-105">
+                    <div class="container mx-auto text-center">
+                        <h2 class="text-2xl font-semibold text-blue-700 mb-4">Projects & Corporate Social Responsibility</h2>
+                        <p class="text-gray-600 mb-6 mx-auto max-w-4xl">Kougar Solutions has successfully installed security systems and cameras at prominent locations such as the Presidential Villa, Nigeria Police Force HQ, Nigeria Air Force HQ, and more. Our commitment extends beyond business as we actively contribute to community initiatives, reinforcing our dedication to corporate social responsibility.</p>
+                        <a href="projects.php" class="inline-block mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded">See All Projects</a>
+                    </div>
+                </section>
+                
+                
+
+        <!-- Global Presence Section -->
+        <section class="py-16 bg-gray-50 global-presence">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Global Presence</h2>
+                <p class="text-center text-lg text-gray-600 mb-12">Spanning Nations, Kougar Solutions proudly serves diverse markets around the world, delivering unparalleled security solutions.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+                    <!-- Nigeria -->
+                    <div class="region-card">
+                        <span class="text-4xl text-blue-500">
+                            <i class="fas fa-globe-africa"></i>
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-5">Nigeria</h3>
+                        <p class="text-gray-600 mt-2">Covering major markets with state-of-the-art security technologies.</p>
+                        <p class="text-gray-600 mt-2">Phone: +234 80 9552 2886, +234 806 1231, +234 817 993 3333</p>
+                        <p class="text-gray-600 mt-2">Email: info@kougarsolution-ltd.com</p>
+                        <p class="text-gray-600 mt-2">Website: <a href="https://www.kougarsolution-ltd.com" class="text-blue-500 hover:underline">kougarsolution-ltd.com</a></p>
+                        <p class="text-gray-600 mt-2">Address: Plot 1185, Cadastral Zone, B06 Parkway Astra Gallery Building, Mabushi, Abuja</p>
+                    </div>
+        
+                    <!-- Cote d'Ivoire -->
+                    <div class="region-card">
+                        <span class="text-4xl text-green-500">
+                            <i class="fas fa-globe-asia"></i>
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-5">Cote d'Ivoire</h3>
+                        <p class="text-gray-600 mt-2">A pivotal hub for innovation and security solutions.</p>
+                        <p class="text-gray-600 mt-2">Phone: +225 07 0000 0026, +225 07 0012 3912</p>
+                        <p class="text-gray-600 mt-2">Email: info@kougar-ci.com</p>
+                        <p class="text-gray-600 mt-2">Website: <a href="https://www.kougarsolution-ltd.com" class="text-blue-500 hover:underline">kougarsolution-ltd.com</a></p>
+                        <p class="text-gray-600 mt-2">Address: Abidjan Marcory Bietry Sur Le Blvrd Du Marseille</p>
+                    </div>
+        
+                    <!-- Liberia -->
+                    <div class="region-card">
+                        <span class="text-4xl text-red-500">
+                            <i class="fas fa-globe-europe"></i>
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-5">Liberia</h3>
+                        <p class="text-gray-600 mt-2">Expanding reach with customized security and technology services.</p>
+                        <p class="text-gray-600 mt-2">Phone: +231 777 966 662, +231 770 966 662, +231 886 585 065</p>
+                        <p class="text-gray-600 mt-2">Email: palib@kougarsolution-ltd.com</p>
+                        <p class="text-gray-600 mt-2">Website: <a href="https://www.kougarsolution-ltd.com" class="text-blue-500 hover:underline">kougarsolution-ltd.com</a></p>
+                        <p class="text-gray-600 mt-2">Address: Petereva Building, ISUZU Motors, Sinkor, 10th Street, Monrovia, Liberia</p>
+                    </div>
+        
+                    <!-- Lebanon -->
+                    <div class="region-card">
+                        <span class="text-4xl text-red-500">
+                            <i class="fas fa-globe-europe"></i>
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-5">Lebanon</h3>
+                        <p class="text-gray-600 mt-2">Customized Security and Technology Solutions to Broaden Your Horizons.</p>
+                        <p class="text-gray-600 mt-2">Phone: +961 1 245 000, +961 3 058 000</p>
+                        <p class="text-gray-600 mt-2">Email: info@mtco-lb.com</p>
+                        <p class="text-gray-600 mt-2">Website: <a href="https://www.kougarsolution-ltd.com" class="text-blue-500 hover:underline">kougarsolution-ltd.com</a></p>
+                        <p class="text-gray-600 mt-2">Address: Beirut - dora highway -riachi centre</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+    </main>
+
+    <a href="https://api.whatsapp.com/send?phone=2348140888654" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+
+    <footer class="bg-white slide-in-bottom">
+        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <p class="mt-8 text-center text-base text-gray-400">
+                &copy; 2024 Kougar Solutions and Allied Services Ltd. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Optional: remove observer after animation
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the element is in view
+    });
+
+    document.querySelectorAll('.fade-in-up').forEach((element) => {
+        observer.observe(element);
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate'); // Trigger animation
+            } else {
+                entry.target.classList.remove('animate'); // Reset animation
+            }
+        });
+    }, {
+        threshold: 0.1 // Adjust based on when you want the animation to start
+    });
+
+    document.querySelectorAll('.value-item').forEach(item => {
+        observer.observe(item);
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationDelay = `${entry.target.dataset.index * 150}ms`;
+                entry.target.classList.add('animate__animated');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.team-member').forEach((item, index) => {
+        item.dataset.index = index;
+        observer.observe(item);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    });
+
+</script>
+</html>

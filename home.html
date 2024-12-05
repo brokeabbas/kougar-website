@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kougar Solutions and Allied Services Ltd.</title>
+    <meta name="description" content="Kougar Solutions offers professional security solutions including CCTV installation, fire alarm systems, access control, and solar energy solutions for residential and commercial properties.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      /* Custom styles and animations *
+      /* General fade-in effect */
+      .fade-in {
+          animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      /* Slide-in effect for various sections */
+      .slide-in-bottom {
+          animation: slideInBottom 1s ease-in-out forwards;
+      }
+
+      .slide-in-left {
+          animation: slideInLeft 1s ease-in-out forwards;
+      }
+
+      .slide-in-right {
+          animation: slideInRight 1s ease-in-out forwards;
+      }
+
+      /* Keyframes for animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideInBottom {
+        0% { transform: translateY(20px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+        0% { transform: translateX(-100px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInRight {
+        0% { transform: translateX(100px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Animation classes */
+    .fade-in {
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    .slide-in-bottom {
+        animation: slideInBottom 1s ease-in-out forwards;
+    }
+
+    .slide-in-left {
+        animation: slideInLeft 1s ease-in-out forwards;
+    }
+
+    .slide-in-right {
+        animation: slideInRight 1s ease-in-out forwards;
+    }
+    html {
+    scroll-behavior: smooth;
+}
+
+
+    body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        /* Base styles, ensuring the logo and nav items are sized appropriately */
+.header .logo {
+  height: 64px; /* Adjust based on your logo's aspect ratio */
+  width: auto;
+  position: relative;
+  z-index: 100; /* Higher than hero-section */
+}
+
+/* Base Styling */
+.nav-toggle {
+  display: none; /* Hide by default */
+  cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block; /* Show hamburger icon */
+  }
+  
+  .nav-links {
+  display: none; /* Hide by default, shown when active */
+  position: fixed; /* Fixed to the viewport */
+  top: 0; left: 0;
+  width: 100%; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: rgba(255,255,255,0.95); /* Semi-transparent white background */
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  padding-top: 60px; /* Space for the header */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 105; /* Ensure it's above the header and hero-section */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+  .nav-links.active {
+    display: flex; /* Show links when active */
+  }
+}
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block; /* Show hamburger icon on smaller screens */
+  }
+}
+
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(-45deg, #002fff, #09008a, #0e0149, #000000);
+    overflow: hidden;
+    perspective: 1000px; /* Perspective to create 3D depth */
+}
+
+.hero-content-3d {
+    display: inline-block;
+    transform-style: preserve-3d; /* Maintain 3D effect on children */
+    animation: subtleRotate 12s ease-in-out infinite alternate; /* Gentle back-and-forth rotation */
+}
+
+@keyframes subtleRotate {
+    0% {
+        transform: rotateY(-5deg) rotateX(-3deg);
+    }
+    50% {
+        transform: rotateY(5deg) rotateX(3deg);
+    }
+    100% {
+        transform: rotateY(-5deg) rotateX(-3deg);
+    }
+}
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .hero-content {
+    position: relative;
+    z-index: 1;
+    transform: translateZ(30px); /* Brings content slightly forward */
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Hover Effect to Pause Animation */
+.hero-content-3d:hover {
+    animation-play-state: paused; /* Pauses the animation on hover */
+}
+
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+      .text-white {
+            color: white;
+      }
+      /* Enhanced Dropdown Menu Styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background: linear-gradient(45deg, #073763, #0a5aa0); /* Futuristic gradient */
+        min-width: 250px; /* Adjust for a wider dropdown */
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        overflow: hidden; /* For border-radius */
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+        text-align: left; /* Align text to the left */
+        padding: 10px 0; /* Add padding for better spacing */
+      }
+
+      .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s;
+        padding: 10px 15px; /* Increase padding for better spacing */
+      }
+
+      .dropdown-content a:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .dropdown:hover .dropbtn {
+        background-color: #073763; /* Adjust as needed */
+      }
+
+      /* Add a glow effect on hover */
+      .dropdown:hover {
+        box-shadow: 0 0 20px rgba(10, 90, 160, 0.6);
+      }
+
+          .btn-primary {
+          background-color: #f58220; /* Kougar's vibrant orange color */
+          border-color: #f58220;
+          transition: background-color 0.3s, transform 0.3s;
+      }
+      .btn-primary:hover {
+          background-color: #ff9c50;
+          border-color: #ff9c50;
+          transform: translateY(-2px); /* Slight lift effect on hover */
+      }
+      /* Smooth hover effect for buttons */
+      .btn-primary {
+          transition: background-color 0.3s, transform 0.3s;
+      }
+      .btn-primary:hover {
+          transform: translateY(-3px);
+      }
+
+      /* Service card hover effect with futuristic glow */
+      .service-card:hover {
+          transition: transform 0.3s, box-shadow 0.3s;
+          transform: translateY(-3px);
+          box-shadow: 0 0 15px rgba(245, 130, 32, 0.5); /* Kougar's orange color glow */
+      }
+      .service-card:hover {
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+      }
+      /* Services Section Enhancements */
+      #services {
+  min-height: 100vh; /* Ensure section covers the full height of the viewport */
+  width: 100vw; /* Ensure section covers the full width of the viewport */
+  background-color: #f4f4f4; /* This is your existing background color */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+/* Ensure content within the section is centered and responsive */
+#services .max-w-7xl {
+  width: 90%; /* Slightly less than full width for padding effect */
+  max-width: 1200px; /* Maximum width to ensure content doesn't stretch too far on larger screens */
+}
+
+@media (max-width: 768px) {
+  #services .max-w-7xl {
+    width: 95%; /* Allow more width on smaller screens */
+  }
+}
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+.slide::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0.5) to make it darker or lighter */
+  z-index: 1; /* Ensures the darkening layer is above the image but below the text content */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ken Burns Effect */
+@keyframes kenburns-top {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.2) translateY(-10%);
+  }
+}
+
+@keyframes kenburns-bottom {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.2) translateY(10%);
+  }
+}
+
+@keyframes kenburns-left {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    transform: scale(1.2) translateX(-10%);
+  }
+}
+
+/* Slide Animation */
+@keyframes slideAnimation {
+  0%, 8% {
+    opacity: 1;
+    z-index: 2;
+  }
+  11%, 100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
+/* Each slide animation delay */
+.slide:nth-child(1) {
+  animation-name: kenburns-top;
+}
+
+.slide:nth-child(2) {
+  animation-name: kenburns-bottom;
+  animation-delay: 10s; /* This delay should be (100%/number of slides) */
+}
+
+.slide:nth-child(3) {
+  animation-name: kenburns-left;
+  animation-delay: 20s; /* Twice the previous delay */
+}
+
+/* Overlay Content Styles */
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically */
+  text-align: center;
+  animation: fadeInOverlay 1s ease-out forwards;
+}
+
+.overlay-content .logo {
+  width: 200px; /* Adjust the width as needed to make the logo smaller */
+  height: auto; /* Maintains the aspect ratio */
+  margin: 0 auto 1rem; /* Center the logo horizontally and add space below */
+  filter: brightness(500%); /* Increase brightness; you can go over 100% */
+}
+
+
+/* Fade in Overlay Content */
+@keyframes fadeInOverlay {
+  from {
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Learn More Button Styles */
+.learn-more-btn {
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.learn-more-btn:hover {
+  background-color: #ffffff;
+  color: #1a202c;
+}
+
+/* General Hover Effect */
+a:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Additional Keyframe Animations */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideAnim {
+  0%, 100% { opacity: 0; }
+  8.33%, 33.33% { opacity: 1; }
+  41.66% { opacity: 0; }
+}
+
+
+
+      .service-card {
+        background: #ffffff; /* White background for the card */
+        backdrop-filter: blur(15px); /* Glassmorphism effect */
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        overflow: hidden; /* Ensures content fits nicely */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transform: translateY(0);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        color: #1100ff;
+        margin-bottom: 1rem;
+      }
+
+      .service-card p {
+        font-size: 1rem;
+        color: #222324;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Futuristic glow effect on hover */
+      .service-card:hover {
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      /* Adding pseudo-elements for extra visual flairs */
+      .service-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+      }
+            /* Hover Effect for Service Cards */
+      .service-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(145deg, transparent, rgba(255, 255, 255, 0.1));
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .service-card:hover::after {
+        opacity: 1;
+      }
+
+      /* Responsive Grid for Services */
+      @media (max-width: 768px) {
+        .service-card {
+          margin-bottom: 2rem;
+        }
+      }
+            .view-project-btn {
+          display: inline-block;
+          background-color: #4a90e2; /* Primary Button Color */
+          color: white;
+          padding: 10px 15px;
+          border-radius: 5px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          margin-top: 15px; /* Adjust as needed */
+          text-align: center;
+      }
+
+      .view-project-btn:hover {
+          background-color: #357abd; /* Darker shade for hover */
+          transform: translateY(-2px); /* Slight lift effect */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+      }
+            /* Gradient background for the futuristic feel */
+      .bg-gradient-to-r {
+        background: linear-gradient(to right, #2a2a72, #009ffd);
+      }
+
+      /* About section enhancements */
+      #about {
+            background: linear-gradient(115deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            transition: transform 0.5s ease, background 0.5s ease;
+        }
+
+        #about:hover {
+            transform: scale(1.02);
+            background: linear-gradient(115deg, #2575fc 0%, #6a11cb 100%);
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            animation: slideInUp 1.5s;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+      footer {
+          background-color: #073763;
+          color: white;
+      }
+      /* Footer link hover effect */
+    footer a:hover {
+        color: #ff9c50; /* Lighter orange for hover state */
+        transition: color 0.3s;
+    }
+    .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.whatsapp-float i {
+    margin-top: 16px;
+}
+
+
+  </style>
+</head>
+<body class="bg-gray-100 fade-in">
+    <!-- Header Section -->
+    <header class="bg-white shadow">
+      <nav class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          <a href="home.html">
+              <img src="Images/kougar Logo.png" alt="Logo" class="logo h-16 sm:h-20">
+          </a>
+          <!-- Hamburger Menu Button, hidden by default -->
+          <button class="nav-toggle hidden" aria-label="toggle navigation">☰</button>
+          <div class="nav-links flex space-x-4">
+              <!-- ... other nav links ... -->
+              <a href="shop.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">E-Shop</a>
+              <a href="about.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+              <a href="projects.php" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+              <a href="solutions.php" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Our Solutions</a>
+              <a href="career.php" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Career</a>
+          </div>
+      </nav>
+    </header>
+
+<!-- Hero Section -->
+<div class="hero-section">
+  <div id="particles-js"></div>
+  <!-- Subtle 3D Container for Hero Content -->
+  <div class="hero-content-3d">
+      <div class="hero-content">
+          <h1 class="hero-title">Empowering Your Security with Advanced Solutions</h1>
+          <p class="hero-subtitle">Innovative. Reliable. Secure.</p>
+          <a href="Contact/get-started.html" class="cta-button">Get Started</a>
+      </div>
+  </div>
+</div>
+
+
+  <!-- About Section -->
+<section id="about" class="py-12 bg-gradient-to-r from-blue-900 to-indigo-700 text-white slide-in-left">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:flex lg:items-center lg:justify-between">
+          <!-- Text Content -->
+          <div class="lg:w-1/2 text-center lg:text-left">
+              <h2>Who We Are</h2>
+              <p class="mt-2 text-4xl leading-8 font-extrabold tracking-tight sm:text-5xl">
+                  A Glimpse into Our World
+              </p>
+              <p class="mt-4 max-w-2xl text-xl lg:text-2xl mx-auto lg:mx-0">
+                  At Kougar Solutions and Allied Services Ltd., we prioritize customer satisfaction and strive to provide the highest quality security solutions. Our range of services includes CCTV, fire alarms, intrusion alarm systems, and more, all designed to ensure your safety and peace of mind.
+              </p>
+              <div class="mt-8">
+                  <a href="about.html" class="inline-block bg-indigo-600 hover:bg-indigo-500 px-5 py-3 border border-transparent rounded-full shadow-lg text-sm font-medium transition duration-300 transform hover:-translate-y-1">See More</a>
+              </div>
+          </div>
+          <!-- Video Content -->
+          <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end">
+              <video class="w-full lg:w-3/4 rounded-lg shadow-lg" controls autoplay muted loop>
+                  <source src="videos/showroom.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+          </div>
+      </div>
+  </div>
+</section>
+
+  
+
+<!-- Solutions Section -->
+<section id="services" class="relative min-h-screen flex items-center justify-center">
+  <div class="slideshow">
+      <!-- Each slide should be structured like this -->
+      <div class="slide"><img src="Images/Solar/pic1.jpg" alt="Solar Solution 1"></div>
+      <div class="slide"><img src="Images/Solar/pic2.jpg" alt="Solar Solution 2"></div>
+      <div class="slide"><img src="Images/Solar/pic3.JPG" alt="Solar Solution 3"></div>
+      <div class="slide"><img src="Images/Solar/pic4.jpg" alt="Solar Solution 4"></div>
+      <div class="slide"><img src="Images/Solar/pic4.jpg" alt="Solar Solution 5"></div>
+      <div class="slide"><img src="Images/Solar/pic5.jpg" alt="Solar Solution 6"></div>
+  </div>
+<!-- Overlay Content -->
+<div class="overlay-content">
+  <img src="Images/kougar Logo.png" alt="Kougar Solutions Logo" class="logo" />
+  <h2 class="text-4xl text-white font-bold">Innovative Solar Solutions</h2>
+  <p class="text-xl text-white mt-4">Empowering your world with clean, renewable energy.</p>
+  <a href="Solutions/cctv.php?id=10" class="learn-more-btn mt-6 inline-block bg-transparent text-white font-semibold py-2 px-4 border border-white rounded hover:bg-white hover:text-gray-800 transition-colors duration-300">Learn More</a>
+</div>
+
+
+
+</section>
+
+
+
+
+
+  <!-- Project Showcase Section -->
+<section id="projects" class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Our Projects</h2>
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        A Showcase of Our Expertise
+      </p>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+        Take a look at some of the successful projects we have completed, showcasing our ability to provide top-notch security solutions for a variety of needs.
+      </p>
+    </div>
+    <!-- Projects Grid -->
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Project Card for Presidential Villa -->
+      <div class="project-card transform transition duration-500 hover:scale-105">
+        <img src="Images/Federal_Ministry_of_Finance.jpg" alt="Finance" class="w-full h-64 object-cover rounded-lg shadow-md">
+        <div class="p-6">
+          <h3 class="text-lg font-medium leading-6 text-gray-900">Federal Ministry of Finance, Abuja</h3>
+          <p class="mt-2 text-sm text-gray-500">Implementation of security and surveillance systems.</p>
+          <a href="PROJECTS/view-project.php?id=4" class="view-project-btn mt-4 text-indigo-600 hover:text-indigo-500">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project Card for ECOWAS -->
+      <div class="project-card transform transition duration-500 hover:scale-105">
+        <img src="Images/ecowas.png" alt="ECOWAS Project" class="w-full h-64 object-cover rounded-lg shadow-md">
+        <div class="p-6">
+          <h3 class="text-lg font-medium leading-6 text-gray-900">ECOWAS</h3>
+          <p class="mt-2 text-sm text-gray-500">Implemented comprehensive security solutions for the Economic Community of West African States.</p>
+          <a href="PROJECTS/view-project.php?id=8" class="view-project-btn mt-4 text-indigo-600 hover:text-indigo-500">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project Card for Nigeria Police Force HQ -->
+      <div class="project-card transform transition duration-500 hover:scale-105">
+        <img src="Images/UBEC.jpg" alt="UBEC" class="w-full h-64 object-cover rounded-lg shadow-md">
+        <div class="p-6">
+          <h3 class="text-lg font-medium leading-6 text-gray-900">Universal Basic Education Commission (UBEC)</h3>
+          <p class="mt-2 text-sm text-gray-500">Provided comprehensive Solar solutions for the Universal Basic Education Commission (UBEC).</p>
+          <a href="PROJECTS/view-project.php?id=11" class="view-project-btn mt-4 text-indigo-600 hover:text-indigo-500">View Project</a>
+        </div>
+      </div>
+      
+      <!-- Additional project cards... -->
+    </div>
+    <!-- Browse All Button -->
+    <div class="mt-8 text-center">
+      <a href="projects.php" class="text-white bg-indigo-600 hover:bg-indigo-700 px-5 py-3 border border-transparent rounded-md shadow-lg text-sm font-medium transition duration-500 ease-in-out transform hover:-translate-y-1">Browse All Projects</a>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <section id="servreq" class="py-12 bg-gray-100 slide-in-right">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Contact Us</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Get in Touch
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Have questions or need to discuss your security needs? Contact us today and let's secure your world together.
+                </p>
+            </div>
+            <!-- Contact Form -->
+            <div class="mt-10">
+              <form action="Contact/submit_contact.php" method="POST" class="flex flex-col space-y-4">
+                    <input type="text" name="name" placeholder="Your Name" required class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <input type="email" name="email" placeholder="Your Email" required class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <textarea name="message" rows="4" placeholder="Your Message" required class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    <button type="submit" class="btn-primary px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+
+    <a href="https://api.whatsapp.com/send?phone=2348140888654" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>  
+  
+  
+
+    <!-- Footer Section -->
+    <footer class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 text-white">
+      <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div class="space-y-4">
+              <h2 class="text-xl font-bold">Kougar Solutions</h2>
+              <p>A leading provider in advanced security and technology solutions, dedicated to empowering businesses and communities.</p>
+              <div class="flex space-x-4">
+                  <a href="https://www.twitter.com/" class="hover:opacity-75" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.facebook.com/" class="hover:opacity-75" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.linkedin.com/" class="hover:opacity-75" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+  
+          <!-- Quick Links -->
+          <div>
+              <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+              <ul class="space-y-2">
+                  <li><a href="about.html" class="hover:text-blue-300">About Us</a></li>
+                  <li><a href="solutions.php" class="hover:text-blue-300">Our Solutions</a></li>
+                  <li><a href="home.html#servreq" class="hover:text-blue-300">Contact</a></li>
+                  <li><a href="career.php" class="hover:text-blue-300">Careers</a></li>
+              </ul>
+          </div>
+  
+          <!-- Services -->
+          <div>
+              <h3 class="text-lg font-semibold mb-2">Services</h3>
+              <ul class="space-y-2">
+                  <li><a href="Solutions/cctv.php?id=1" class="hover:text-blue-300">CCTV Systems</a></li>
+                  <li><a href="Solutions/cctv.php?id=4" class="hover:text-blue-300">Access Control</a></li>
+                  <li><a href="Solutions/cctv.php?id=2" class="hover:text-blue-300">Fire Alarm Systems</a></li>
+                  <li><a href="Solutions/cctv.php?id=3" class="hover:text-blue-300">Intrusion Detection</a></li>
+              </ul>
+          </div>
+  
+          <!-- Contact Info -->
+          <div>
+              <h3 class="text-lg font-semibold mb-2">Contact Info</h3>
+              <ul class="space-y-2">
+                  <li>Phone: +234 80 9552 2886, +234 81 7993 3333</li>
+                  <li>Email: info@kougarsolution-ltd.com</li>
+                  <li>Address: Plot 1185, Cadastral Zone,
+  B06 Parkway Astra Gallery Building,
+  Mabushi, Abuja.</li>
+              </ul>
+          </div>
+      </div>
+  
+      <div class="text-center py-4 border-t border-blue-700">
+          &copy; 2024 Kougar Solutions. All rights reserved.
+      </div>
+  </footer>
+  
+  <script>
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 5,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    let slides = document.querySelectorAll(".slide");
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, idx) => {
+            slide.style.opacity = "0";
+            if (idx === index) {
+                slide.style.opacity = "1";
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    // Start the slideshow
+    showSlide(currentIndex);
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  // Toggle navigation on hamburger click
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Listen for clicks on the navLinks container
+  navLinks.addEventListener('click', function(e) {
+    // Check if the clicked element is the navLinks container itself, not its children
+    if (e.currentTarget === e.target) {
+      // This means the semi-transparent background was clicked, not the links
+      navLinks.classList.remove('active');
+    }
+  });
+
+  // Optional: If you have a close button, handle its click event
+  const closeButton = navLinks.querySelector('.close-btn'); // Ensure you have this button in your HTML
+  if (closeButton) {
+    closeButton.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  }
+});
+
+
+</script>
+</body>
+</html>

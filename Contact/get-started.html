@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embark on Your Security Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+            body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            /* Ensure body takes the full height of the viewport */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden; /* Prevent horizontal scroll caused by full viewport width */
+        }
+
+        .hero {
+            /* This makes the hero section take the full viewport height */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #091236, #1E215D);
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+        .content {
+            max-width: 600px;
+            padding: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            animation: textPopIn 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            opacity: 0;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            animation: textPopIn 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: btnRise 1.5s forwards;
+            animation-delay: 1s;
+        }
+        .btn:hover {
+            background-color: #fff;
+            color: #1E215D;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes textPopIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            80% {
+                transform: translateY(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes btnRise {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes movingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.service-request-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px; /* Adjust padding if needed */
+    margin: 40px auto;
+    max-width: 800px; /* Increase max-width for a wider form */
+    width: 90%; /* Or you can set a specific width like 90% */
+    border-radius: 15px;
+    color: #FFFFFF;
+    background: linear-gradient(270deg, #003366, #2b2525, #003366);
+    background-size: 400% 400%;
+    animation: movingGradient 15s ease infinite;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden; /* Ensure the background doesn't overflow the rounded corners */
+}
+.form-background-container {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(270deg, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background-size: 400% 400%;
+    animation: movingGradient 15s ease infinite;
+    padding: 60px 0; /* Add vertical padding to increase area */
+    width: 100%; /* Ensure it covers the full width of its parent */
+}
+
+.service-request-form {
+    /* Adjust the .service-request-form styles to remove background properties */
+    max-width: 600px; /* Or any specific width */
+    /* Other styles remain the same */
+}
+
+
+
+
+.service-request-form .logo {
+    max-width: 100px; /* Adjust size as needed */
+    margin-bottom: 20px; /* Add some space between the logo and the <h2> */
+}
+
+.service-request-form h2 {
+    margin: 20px 0; /* Ensure there's space around the <h2> for readability */
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items (label and input) in the center */
+    text-align: center; /* Center the text of label */
+    margin-bottom: 20px; /* Maintain spacing between form groups */
+}
+
+.form-group label {
+    font-size: 16px; /* Slightly larger for readability */
+    color: rgba(255, 255, 255, 0.9); /* Crisp, clear white */
+    font-weight: 600; /* Semi-bold for emphasis */
+    letter-spacing: 0.5px; /* Spaced out letters for a modern look */
+    position: relative; /* Set position relative for pseudo-elements */
+    padding-left: 30px; /* Make space for pseudo-elements or icons */
+    display: flex; /* Use flex to align pseudo-elements or icons */
+    align-items: center; /* Center align the text and icons */
+    justify-content: start; /* Align content to the start */
+    margin-bottom: 10px; /* Adjust spacing as per your layout */
+}
+
+.form-group label::before {
+    content: ''; /* Adjust this with specific content if needed */
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-image: url('icon-url-here'); /* Example: use an icon related to the input */
+    background-size: cover; /* Ensure the icon covers the area */
+    position: absolute;
+    left: 0;
+}
+
+/* Enhancing the focus state for better user experience */
+.form-control:focus + label {
+    color: #4fd1c5; /* Highlight color when input is focused */
+    font-weight: 700; /* Make the label bolder on input focus */
+}
+
+
+.form-control {
+    appearance: none; /* Remove default system appearance */
+    -webkit-appearance: none; /* For Safari */
+    background: #1E215D; /* Dark blue background */
+    color: white; /* Text color */
+    border: 2px solid #4A4A4A; /* Dark border for more contrast */
+    border-radius: 5px; /* Rounded corners */
+    padding: 12px 36px 12px 12px; /* Padding for text and arrow */
+    font-size: 16px; /* Increased font size for readability */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" fill="%23ffffff"/></svg>'); /* Custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 12px center; /* Position custom arrow */
+    background-size: 12px; /* Size of the custom arrow */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover and focus */
+}
+
+.form-control:hover, .form-control:focus {
+    background-color: #2a2d70; /* Slightly lighter blue on hover/focus */
+    border-color: #ffffff; /* White border on hover/focus */
+    outline: none; /* Remove focus outline */
+}
+
+.btn {
+    width: 100%;
+    background: linear-gradient(45deg, #4fd1c5, #1e215d);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #1e215d, #4fd1c5);
+}
+.footer {
+    background-color: #2D3748;
+    color: #E2E8F0;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #E2E8F0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #cbd5e0;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #E2E8F0;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #cbd5e0;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+
+        
+    </style>
+</head>
+<body>
+    <main class="hero">
+        <div class="content">
+            <h1>Secure Tomorrow, Today.</h1>
+            <p>Embark on a journey to enhance your Overall security. Discover solutions that protect, empower, and inspire.</p>
+            <a href="#fillform" class="btn">Begin Now</a>
+        </div>
+    </main>
+
+
+    <!-- Service Request Form -->
+    <div id="fillform" class="form-background-container">
+    <section class="service-request-form" data-aos="fade-up" data-aos-duration="1000">
+        <!-- Adjust the src as needed -->
+        <img src="../Images/kougar Logo.png" alt="Kougar Solutions Logo" class="logo" data-aos="zoom-in" data-aos-delay="300">
+        <h2 data-aos="fade-down" data-aos-delay="500">Request our Service</h2>
+        <form action="submit_contact.php" method="post">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="serviceType">Service Type:</label>
+                <select id="serviceType" name="serviceType" required class="form-control">
+                    <option value="">Select Service...</option>
+                    <option value=">CCTV Solution">CCTV Solution</option>
+                    <option value="Fire Systems">Fire Systems Protection Services</option>
+                    <option value="Intrusion Security">Intrusion Security Solutions</option>
+                    <option value="Time Attendance And Access Control">Time Attendance And Access Control </option>
+                    <option value="Electric fencing">Electric fencing</option>
+                    <option value="Solar Solutions">Solar Solutions</option>
+                    <option value="Vehicle Tracking & Fleet Management">Vehicle Tracking & Fleet Management Solution</option>
+                    <option value="Vehicle Scanning">Vehicle Scanning</option>
+                    <option value="Road Blockers">Road Blockers</option>
+                    <option value="sound System">Sound System & Conference Rooms</option>
+                    <option value="Public Address">Public Address System</option>
+                    <option value="PABX Intercom">PABX Intercom, Videophone, IP Phones & DBS</option>
+                    <option value="Radio Communication">Radio Communication System</option>
+                    <option value="Others (add to details)">Others (add to details)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="details">Details:</label>
+                <textarea id="details" name="details" rows="4" required class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Request</button>
+        </form>
+    </section>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Kougar Solutions - Leading in innovative and reliable security solutions tailored for your needs.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com/yourhandle"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/yourpage"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/yourprofile"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kougar Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        AOS.init();
+        </script>
+        
+</body>
+</html>
